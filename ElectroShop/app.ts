@@ -62,10 +62,7 @@ for (const price of productPrices) {
 console.log(`Products with a price greater than 100: ${productsOver100}`);
 
 // Part 5: Function parameters and return types
-function calculateDiscount(
-  originalPrice: number,
-  discountPercentage: number,
-): number {
+function calculateDiscount(originalPrice: number, discountPercentage: number,): number {
   const discountAmount: number = originalPrice * (discountPercentage / 100);
   return originalPrice - discountAmount;
 }
@@ -79,12 +76,8 @@ function displayStoreMessage(message: string): void {
 }
 
 // Part 6: Optional description and default currency parameters
-function displayProductInfo(
-  productName: string,
-  productPrice: number,
-  productDescription?: string,
-  productCurrency: string = "USD",
-): void {
+function displayProductInfo(productName: string, productPrice: number, productDescription?: string, productCurrency: string = "USD",): void {
+
   console.log(`Product: ${productName}`);
   console.log(`Price: ${productPrice} ${productCurrency}`);
 
