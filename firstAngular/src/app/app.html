@@ -1,0 +1,79 @@
+
+<div class="container">
+
+  <!-- Store Information -->
+  <header>
+    <h1>{{ storeName }}</h1>
+    <p>{{ storeDescription }}</p>
+    <p>{{ storeAddress }}</p>
+    <p>Currency: {{ currency }}</p>
+  </header>
+
+  <!-- Store Status -->
+  <h2 class="status">{{ storeStatus }}</h2>
+
+  <!-- Featured Product -->
+  <section>
+    <h2>Featured Product</h2>
+
+    <div class="featured">
+      <h3>{{ featuredProduct.name }}</h3>
+
+      <p>{{ featuredProduct.description }}</p>
+
+      <p>
+        <del>${{ featuredProduct.price }}</del>
+
+        <strong>${{ finalPrice }}</strong>
+
+        <span>
+          {{ discountPercentage }}% Discount
+        </span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section>
+    <h2>Our Products</h2>
+
+    <div class="products">
+      @for (product of productNames; track $index) {
+        <div class="product-card">
+          <h3>{{ product }}</h3>
+          <p>${{ productPrices[$index] }}</p>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- Store Summary -->
+  <section>
+    <h2>Store Summary</h2>
+
+    <div class="summary">
+
+      <div>
+        <h3>{{ totalProducts }}</h3>
+        <p>Total Products</p>
+      </div>
+
+      <div>
+        <h3>${{ highestPrice }}</h3>
+        <p>Highest Price</p>
+      </div>
+
+      <div>
+        <h3>${{ lowestPrice }}</h3>
+        <p>Lowest Price</p>
+      </div>
+
+      <div>
+        <h3>${{ totalValue }}</h3>
+        <p>Total Products Value</p>
+      </div>
+
+    </div>
+  </section>
+
+</div>
