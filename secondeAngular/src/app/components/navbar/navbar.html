@@ -1,0 +1,9 @@
+<nav class="navbar" aria-label="Main navigation">
+  <div class="navbar__links">
+    <button [class.active]="selectedPage === 'Home'" (click)="selectPage('Home')">Home</button>
+    <button [class.active]="selectedPage === 'Products'" (click)="selectPage('Products')">Products</button>
+    <button [class.active]="selectedPage === 'About Us'" (click)="selectPage('About Us')">About Us</button>
+    <button [class.active]="selectedPage === 'Contact Us'" (click)="selectPage('Contact Us')">Contact Us</button>
+  </div>
+  <p>Selected page: <strong>{{ selectedPage }}</strong></p>
+</nav>

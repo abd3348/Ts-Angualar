@@ -1,0 +1,14 @@
+<section class="details-section" id="details">
+  <div class="details-heading"><span>PRODUCT MANAGEMENT</span><h2>Update product details</h2><p>Edit the featured product and adjust the order quantity below.</p></div>
+  <div class="details-card">
+    <div class="preview"><span class="discount">{{ discountPercentage }}% OFF</span><img [src]="productImage" [alt]="productName" /><div class="preview__caption"><span [class.unavailable]="!isAvailable">{{ isAvailable ? 'In stock' : 'Unavailable' }}</span><strong>{{ productName }}</strong></div></div>
+    <div class="editor">
+      <div class="field"><label for="productName">Product name</label><input id="productName" [(ngModel)]="productName" /></div>
+      <div class="field"><label for="productDescription">Description</label><textarea id="productDescription" rows="3" [(ngModel)]="productDescription"></textarea></div>
+      <div class="field-row"><div class="field"><label for="productPrice">Price ($)</label><input id="productPrice" type="number" min="0" [(ngModel)]="productPrice" /></div><div class="field"><label for="discount">Discount (%)</label><input id="discount" type="number" min="0" max="100" [(ngModel)]="discountPercentage" /></div></div>
+      <label class="availability"><input type="checkbox" [(ngModel)]="isAvailable" /> Product is available</label>
+      <div class="summary"><div><span>Price after discount</span><strong>${{ discountedPrice.toFixed(2) }}</strong></div><div class="quantity-control"><span>Quantity</span><div><button (click)="decreaseQuantity()" [disabled]="quantity <= 1">−</button><strong>{{ quantity }}</strong><button (click)="increaseQuantity()">+</button></div></div></div>
+      <button class="save-button" [disabled]="!isAvailable" (click)="saveChanges()">Save product changes</button>
+    </div>
+  </div>
+</section>

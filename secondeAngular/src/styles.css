@@ -1,0 +1,6 @@
+:root { color-scheme:light; --ink:#16213d; --muted:#667085; --primary:#165dff; --primary-dark:#0e43bd; --accent:#ffb703; --surface:#fff; --background:#f4f7fb; --line:#e5eaf2; font-family:'Segoe UI',Arial,sans-serif; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; color:var(--ink); background:var(--background); }
+button,input,textarea { font:inherit; }
+button { cursor:pointer; }
