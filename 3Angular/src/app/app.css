@@ -1,0 +1,17 @@
+.page-shell { min-height: 100vh; display: flex; flex-direction: column; }
+main { flex: 1; }
+
+.communication-lab { padding:84px max(6vw,24px) 94px; background:#eaf1ff; }
+.lab-title { max-width:1180px; margin:0 auto 30px; display:flex; align-items:flex-end; justify-content:space-between; gap:28px; }
+.lab-title span { color:var(--primary); font-size:12px; font-weight:800; letter-spacing:.11em; }
+.lab-title h2 { margin:8px 0 0; font-size:clamp(32px,4vw,46px); letter-spacing:-.035em; }
+.product-switcher { display:flex; gap:8px; padding:5px; border:1px solid #d6e0f0; border-radius:13px; background:#fff; }
+.product-switcher button { padding:10px 14px; border:0; border-radius:9px; color:#566176; background:transparent; font-weight:700; }
+.product-switcher button.active { color:#fff; background:var(--primary); }
+app-product-details,app-shopping-cart { display:block; max-width:1180px; margin:0 auto; }
+
+@media (max-width:720px) {
+  .lab-title { align-items:flex-start; flex-direction:column; }
+  .product-switcher { width:100%; }
+  .product-switcher button { flex:1; }
+}
