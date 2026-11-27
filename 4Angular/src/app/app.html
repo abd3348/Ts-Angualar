@@ -1,0 +1,33 @@
+<div class="page-shell">
+  <app-header></app-header>
+  <app-navbar></app-navbar>
+  <main>
+    <app-product-list></app-product-list>
+
+    <section class="communication-lab">
+      <div class="lab-title">
+        <div><span>REACTIVE STATE & COMPONENT COMMUNICATION</span><h2>Choose a product</h2></div>
+        <div class="product-switcher" aria-label="Choose a product">
+          <button [class.active]="activeProduct() === 'laptop'" (click)="showLaptop()">Laptop</button>
+          <button [class.active]="activeProduct() === 'headphones'" (click)="showHeadphones()">Wireless Headphones</button>
+        </div>
+      </div>
+
+      <app-product-details
+        [productName]="productName()"
+        [productDescription]="productDescription()"
+        [productPrice]="productPrice()"
+        [isAvailable]="productAvailability()"
+        [productImage]="productImage()"
+        (addToCart)="handleAddToCart($event)"
+      ></app-product-details>
+
+      <app-shopping-cart
+        [productName]="cartProductName()"
+        [productPrice]="cartProductPrice()"
+        [selectedQuantity]="cartQuantity()"
+      ></app-shopping-cart>
+    </section>
+  </main>
+  <app-footer></app-footer>
+</div>

@@ -1,0 +1,9 @@
+<aside class="cart" [class.cart--empty]="!productName">
+  <div class="cart-heading"><span class="cart-icon">🛒</span><div><p>SHOPPING CART</p><h3>{{ productName ? 'Your selected product' : 'Your cart is empty' }}</h3></div></div>
+  <div class="cart-details">
+    <div><span>Product</span><strong>{{ productName || '—' }}</strong></div>
+    <div><span>Unit Price</span><strong>${{ productPrice }}</strong></div>
+    <div><span>Quantity</span><strong>{{ selectedQuantity }}</strong></div>
+    <div class="total"><span>Total Price</span><strong>${{ totalPrice.toLocaleString() }}</strong></div>
+  </div>
+</aside>
